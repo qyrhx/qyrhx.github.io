@@ -19,6 +19,7 @@
 
                 <h2>Overview</h2>
                 <p>An academic project done with a mathematics professor at my university. The goal was to implement the algorithms from a research paper and visualize them. It was not as simple as implementing a web interface: the algorithms come first, with performance in mind from the start, and the UI sits on top of them.</p>
+                <p>The algorithms are called “Unranking algorithms”. Basically, we have a list of combinatorial structures ordered in a certain manner, an unranking algorithm takes a rank, and constructs the corresponding structure <b>without going through all the previous ones.</b> This is important because the number of structures grows rapidly. For example, if there are millions of possible structures, asking for structure #900,000 shouldn't require generating structures #1 through #899,999 first.</p>
 
                 <h2>Heavy computation behind a live UI</h2>
                 <p>The computations are expensive, and running them on the main thread freezes the page. I moved them into Web Workers so calculation is isolated and the interface stays responsive. The visualization was a challenge of its own.</p>
