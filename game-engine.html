@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="2D game engine in C++, focused on API design and architecture.">
+    <title>2D game engine</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <header><nav><a href="index.html">~/</a><a href="projects.html">~/projects</a></nav></header>
+      <main>
+        <p><a href="projects.html">[ back ]</a></p>
+        <h1>e2d: 2D game engine</h1>
+        <p><a href="https://github.com/qyrhx/e2d">source code: <span class="todo">github.com/qyrhx/e2d</span></p></a>
+
+        <h2>Overview</h2>
+        <p>A 2D game engine in C++ with graphics, collisions, input and animation.<br>
+          To be honest, performance here was not a concern here...yes, the C++ mindset is always present, but not my main task. The questions were how the engine would be used, how to organize it internally, and how the parts fit together. It felt as much like planning and engineering as programming. I found myself writing less code and thinking quite a bit whether that approach works well with the rest of the system. It was an interesting experience.</p>
+        <h2>Using the engine</h2>
+        <p>The engine coordinates events, rendering, assets and how they are stored, animation and the map. Each concern lives in its own manager:</p>
+        <pre><code><span class="c">// Each spritesheet row is an animation state (Idle = 0, Walk = 1, ...)</span>
+          <span class="k">enum class</span> <span class="t">PlayerAnimationState</span> { Idle = 0, Walk = 1 };
+
+          <span class="k">auto</span> sheet  = engine.spritesheet_manager.load_spritesheet(<span class="k">"file.png"</span>, {64, 64});
+          <span class="k">auto</span> player = engine.world_manager.new_character();
+engine.spritesheet_manager.bind_spritesheet(player, sheet);
+engine.spritesheet_manager.set_entity_animation_state(player, <span class="t">PlayerAnimationState</span>::Walk);
+
+engine.input_manager.bind(<span class="t">KeyEvent</span>{.key = <span class="k">'D'</span>, .ctrl = <span class="k">true</span>}, [&amp;] {
+    engine.world_manager.get_character(player).move(-200, 0);
+});</code></pre>
+
+        <h2>What's next</h2>
+        <p>The core is done and features can be built on top of it. Once I have some time at my hand, I plan to continue developping it into something larger. Maybe audio is next, followed by more advanced features.</p>
+
+      </main>
+      <footer>
+        <a href="mailto:crnourdine1@gmail.com">email</a>
+        <a href="https://github.com/qyrhx">github</a>
+        CV:
+        <a href="cv-en.pdf">English,</a>
+        <a href="cv-fr.pdf">French</a>
+      </footer>
+    </div>
+  </body>
+</html>

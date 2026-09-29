@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="C++20 music indexing library with Python bindings.">
+    <title>Music indexer</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <header><nav><a href="index.html">~/</a><a href="projects.html">~/projects</a></nav></header>
+      <main>
+        <p><a href="projects.html">[ back ]</a></p>
+        <h1>Music indexer</h1>
+        <p><a href="https://github.com/qyrhx/midx">source code: <span class="todo">github.com/qyrhx/midx</span></p></a>
+        <h2>Overview</h2>
+        <p>A Linux library that indexes music files. Given one or more directories, it finds music files, extracts their metadata and stores everything in an SQLite database. It is designed as the backend for a music player. Documentation is generated with Doxygen.</p>
+        <h2>Designing a library</h2>
+        <p>API design is what I found myself thinking about a good amount here, not performance, because here I am building a library not an app. I had to work out how I would want a music indexing library to look from the caller's side.</p>
+
+        <h2>Python bindings</h2>
+        <p>Another useful thing I learn is how to write python bindings for C++ library, I used pybind11, it was pretty interesting and fun!</p>
+      </main>
+      <footer>
+        <a href="mailto:crnourdine1@gmail.com">email</a>
+        <a href="https://github.com/qyrhx">github</a>
+        CV:
+        <a href="cv-en.pdf">English,</a>
+        <a href="cv-fr.pdf">French</a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Combinatorial algorithms from a paper, in React/TypeScript, merged into SymPy.">
+    <title>Combinatorial algorithms</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <header><nav><a href="index.html">~/</a><a href="projects.html">~/projects</a></nav></header>
+      <main>
+        <p><a href="projects.html">[ back ]</a></p>
+        <h1>Combinatorial algorithms</h1>
+
+        <p><a href="https://github.com/qyrhx/Unranking-Algos">source code: <span class="todo">https://github.com/qyrhx/Unranking-Algos</span></p></a>
+
+
+        <h2>Overview</h2>
+        <p>An academic project done with a mathematics professor at my university. The goal was to implement the algorithms from a research paper and visualize them. It was not as simple as implementing a web interface: the algorithms come first, with performance in mind from the start, and the UI sits on top of them.</p>
+
+        <h2>Heavy computation behind a live UI</h2>
+        <p>The computations are expensive, and running them on the main thread freezes the page. I moved them into Web Workers so calculation is isolated and the interface stays responsive. The visualization was a challenge of its own.</p>
+
+        <h2>From TypeScript to SymPy</h2>
+        <p>We then translated the algorithms from TypeScript to Python and contributed them to SymPy. That meant reading through the library and learning to write code that matches its style and design.</p>
+
+        <h2>...</h2>
+        <p>Reading a professional codebase like SymPy is one of the best ways to learn. Implementing a paper teaches you where the description ends and the engineering begins. Fun project, despite the paper making me pull my hair out at times</p>
+
+        <h2>Demo</h2>
+        <video >
+  <source src="unranking-algos-demo.webm" type="video/webm" />
+
+      </main>
+      <footer>
+        <a href="mailto:crnourdine1@gmail.com">email</a>
+        <a href="https://github.com/qyrhx">github</a>
+        CV:
+        <a href="cv-en.pdf">English,</a>
+        <a href="cv-fr.pdf">French</a>
+      </footer>
+    </div>
+  </body>
+</html>
