@@ -1,43 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Bitboard chess engine in C++20, verified with perft.">
-    <title>Chess engine</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div class="wrap">
-      <header><nav><a href="index.html">~/</a><a href="projects.html">~/projects</a></nav></header>
-      <main>
-        <p><a href="projects.html">[ back ]</a></p>
-        <h1>Chess engine</h1>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Bitboard chess engine in C++20, verified with perft.">
+        <title>Chess engine</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="wrap">
+            <header><nav><a href="index.html">~/</a><a href="projects.html">~/projects</a></nav></header>
+            <main>
+                <p><a href="projects.html">[ back ]</a></p>
+                <h1>Chess engine</h1>
 
-        <p><a href="#">source code</a> <span class="todo">[TODO: repo link]</span></p>
-        <h2>Overview</h2>
-        <p>A chess engine written from scratch in C++20 around bitboards. It began as a way to think seriously about performance. PERFT testing is what made it more than a toy: counting the leaf nodes of the move tree to a fixed depth and comparing against known values means move generation is verifiably correct.</p>
-        <h2>Bitboards</h2>
-        <p>A board has 64 squares and a machine word has 64 bits, so a set of squares is just an integer. Move generation becomes shifts, masks and bit scans, and small tricks fall out of that fit. My favourite is a one-liner:</p>
-        <pre><code><span class="k">constexpr bool</span> more_than_one(<span class="t">Bitboard</span> b) { <span class="k">return</span> b &amp; (b - <span class="k">1</span>); }</code></pre>
-        <p><code>b - 1</code> flips the lowest set bit and every zero below it, so <code>b &amp; (b - 1)</code> clears the lowest set bit. The result is nonzero exactly when two or more bits were set. In chess that detects a double check, where only king moves are legal.</p>
-        <h2>Learning from Stockfish</h2>
-        <p>Reading Stockfish's code taught me a lot. Sometimes I imitated its approach, and other times I only read it to understand why it does something.</p>
+                <p><a href="#">source code</a> <span class="todo">[TODO: repo link]</span></p>
+                <h2>Overview</h2>
+                <p>A chess engine written from scratch in C++20 around bitboards. It began as a way to think seriously about performance. PERFT testing is what made it more than a toy: counting the leaf nodes of the move tree to a fixed depth and comparing against known values means move generation is verifiably correct.</p>
+                <h2>Bitboards</h2>
+                <p>A board has 64 squares and a machine word has 64 bits, so a set of squares is just an integer. Move generation becomes shifts, masks and bit scans, and small tricks fall out of that fit. My favourite is a one-liner:</p>
+                <pre><code><span class="k">constexpr bool</span> more_than_one(<span class="t">Bitboard</span> b) { <span class="k">return</span> b &amp; (b - <span class="k">1</span>); }</code></pre>
+                <p><code>b - 1</code> flips the lowest set bit and every zero below it, so <code>b &amp; (b - 1)</code> clears the lowest set bit. The result is nonzero exactly when two or more bits were set. In chess that detects a double check, where only king moves are legal.</p>
+                <h2>Learning from Stockfish</h2>
+                <p>Reading Stockfish's code taught me a lot. Sometimes I imitated its approach, and other times I only read it to understand why it does something.</p>
 
-        <h2>Results</h2>
+                <h2>Results</h2>
 
-        <h2>What I learned</h2>
-        <p>Performance work needs measurement, and perft turns correctness into something you can check. Reading other people's engine code is a skill of its own.</p>
-        <h2>What's next</h2>
+                <h2>What I learned</h2>
+                <p>Performance work needs measurement, and perft turns correctness into something you can check. Reading other people's engine code is a skill of its own.</p>
+                <h2>What's next</h2>
 
-      </main>
-      <footer>
-        <a href="mailto:crnourdine1@gmail.com">email</a>
-        <a href="https://github.com/qyrhx">github</a>
-        CV:
-        <a href="cv-en.pdf">English,</a>
-        <a href="cv-fr.pdf">French</a>
-      </footer>
-    </div>
-  </body>
+            </main>
+            <footer>
+                <a href="mailto:crnourdine1@gmail.com">email</a>
+                <a href="https://github.com/qyrhx">github</a>
+                CV:
+                <a href="cv-en.pdf">English,</a>
+                <a href="cv-fr.pdf">French</a>
+            </footer>
+        </div>
+    </body>
 </html>
